@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The — Ravi</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="icon" href="{% static 'assets/favicon.ico' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="{% url 'home' %}" class="nav-logo">RAVI<span class="cursor-dot">_</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="{% url 'home' %}" >Home</a></li>         <li><a href="{% url 'about' %}" class="active">About</a></li>
+    <li><a href="{% url 'projects' %}">Projects</a></li>
+   
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-meta">
+      <span class="line-num">01</span>
+      <span class="tag">About me</span>
+    </div>
+    <h1 class="page-title">Django ,Spring-Boot <span class="accent">Developer</span></h1>
+  </section>
+
+  <!-- BIO -->
+  <section class="about-grid">
+    <div class="about-portrait">
+      <div class="portrait-frame">
+        <div class="portrait-placeholder">
+          <span class="portrait-initials">TR</span>
+        </div>
+        <div class="portrait-badge">
+          <span class="badge-dot"></span>
+          Open to work
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="about-lead">I write code that ships, performs, and doesn't break at 2am.</p>
+      <p>I am ravi — a full-stack developer with 4+ years building web apps that sit at the intersection of great engineering and great design. I care deeply about performance, accessibility, and developer experience.</p>
+      <p>Before going independent, I spent two years at a startup in SF scaling their platform from 0 to 50k users. Before that, I freelanced while finishing a CS degree at UC Berkeley.</p>
+      <p>When I'm not coding, you'll find me hiking the Marin Headlands, experimenting with espresso ratios, or reading dense papers on distributed systems.</p>
+      <div class="about-cta-row">
+        <a href="{% url 'contact' %}" class="btn btn-primary">Work with me</a>
+        <a href="#" class="btn btn-ghost">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section">
+    <div class="section-header">
+      <span class="line-num">02</span>
+      <h2>Skills & tools</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4 class="skill-group-title">Frontend</h4>
+        <ul class="skill-list">
+          <li><span class="skill-bar" style="--pct:95%"></span>React / Next.js<em>95%</em></li>
+          <li><span class="skill-bar" style="--pct:90%"></span>TypeScript<em>90%</em></li>
+          <li><span class="skill-bar" style="--pct:88%"></span>CSS / Tailwind<em>88%</em></li>
+          <li><span class="skill-bar" style="--pct:75%"></span>Vue.js<em>75%</em></li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4 class="skill-group-title">Backend</h4>
+        <ul class="skill-list">
+          <li><span class="skill-bar" style="--pct:92%"></span>Node.js / Express<em>92%</em></li>
+          <li><span class="skill-bar" style="--pct:85%"></span>PostgreSQL<em>85%</em></li>
+          <li><span class="skill-bar" style="--pct:78%"></span>Python / FastAPI<em>78%</em></li>
+          <li><span class="skill-bar" style="--pct:70%"></span>GraphQL<em>70%</em></li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4 class="skill-group-title">DevOps & Tools</h4>
+        <ul class="skill-list">
+          <li><span class="skill-bar" style="--pct:88%"></span>AWS / Vercel<em>88%</em></li>
+          <li><span class="skill-bar" style="--pct:82%"></span>Docker<em>82%</em></li>
+          <li><span class="skill-bar" style="--pct:90%"></span>Git / GitHub<em>90%</em></li>
+          <li><span class="skill-bar" style="--pct:75%"></span>CI/CD Pipelines<em>75%</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <div class="section-header">
+      <span class="line-num">02</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2022 — Present</div>
+        <div class="tl-content">
+          <h4>Independent Developer</h4>
+          <span class="tl-place">Freelance / Remote</span>
+          <p>Building products for startups and agencies. Clients range from early-stage SaaS companies to established e-commerce brands.</p>
+        </div>
+      </div>
+      <!-- <div class="tl-item">
+        <div class="tl-date">2023 — 2026</div>
+        <div class="tl-content">
+          <h4>|Software Engineer</h4>
+          <span class="tl-place">Veritas Labs, San Francisco</span>
+          <p>Scaled the core platform from MVP to production serving 50k users. Led frontend architecture migration from Vue to React.</p>
+        </div>
+      </div> -->
+      <div class="tl-item">
+        <div class="tl-date">2023 — 2026</div>
+        <div class="tl-content">
+          <h4>B.C.A </h4>
+          <span class="tl-place" ><a href="https://www.vbu.ac.in/login" style="color: rgb(103, 59, 224);">Vinoba bhave university hazaribagh</a></span>
+          <p>Focused on algorithms, databases, and human-computer interaction. Freelanced throughout to fund tuition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span class="footer-copy">© 2025 The Ravi</span>
+      <div class="footer-links">
+      <a href="https://github.com\ravikaushal11u" target="_blank">GitHub</a>
+      <a href="https://linkedin.com\in\ravikaushal2005" target="_blank">LinkedIn</a>
+      <a href="https://instagram.com\ravikaushal_000" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="{% static 'main.js' %}"></script>
+</body>
+</html>

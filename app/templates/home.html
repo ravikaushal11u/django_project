@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The — Ravi</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="icon" href="{% static 'assets/favicon.ico' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+<nav class="nav">
+   <a href="{% url 'admnl' %}" class="nav-logo">
+    RAVI<span class="cursor-dot">...</span>
+</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li><a href="{% url 'home' %}" class="active">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'projects' %}">Projects</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+
+        {% if user.is_authenticated %}
+
+ 
+
+            <li>
+                <a href="{% url 'logout' %}"
+                   style="
+                   display:inline-block;
+                   padding:7px 16px;
+                   background:#ef4444;
+                   color:#fff;
+                   text-decoration:none;
+                   border-radius:50px;
+                   font-family:'Poppins',sans-serif;
+                   font-size:15px;
+                   font-weight:600;
+                   box-shadow:0 8px 20px rgba(239,68,68,.35);">
+                    Logout
+                </a>
+            </li>
+
+        {% else %}
+
+            <li>
+                <a href="{% url 'login' %}"
+                   style="
+                   display:inline-block;
+                   padding:7px 16px;
+                   background:#2563eb;
+                   color:#fff;
+                   text-decoration:none;
+                   border-radius:50px;
+                   font-family:'Poppins',sans-serif;
+                   font-size:15px;
+                   font-weight:600;
+                   box-shadow:0 8px 20px rgba(37,99,235,.35);">
+                    Login
+                </a>
+            </li>
+
+        {% endif %}
+
+    </ul>
+</nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-meta">
+      <span class="line-num">01</span>
+      <span class="tag">Available for work</span>
+    </div>
+    <h1 class="hero-title">
+      Building digital<br />
+      experiences that<br />
+      <span class="accent">actually work<span class="blink">▋</span></span>
+    </h1>
+    <p class="hero-sub">Full-stack web developer crafting fast, accessible, and beautiful interfaces. Based in San Francisco.</p>
+    <div class="hero-cta">
+      <a href="{% url 'projects' %}" class="btn btn-primary">View Projects</a>
+      <a href="{% url 'contact' %}" class="btn btn-ghost">Get in Touch</a>
+    </div>
+    <div class="hero-stack">
+      <span class="stack-label">Stack</span>
+      <div class="stack-pills">
+        <span>React</span><span>Node.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Tailwind</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat">
+      <span class="stat-num">2+</span>
+      <span class="stat-label">Years experience</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">32</span>
+      <span class="stat-label">Projects </span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">18</span>
+      <span class="stat-label">Happy clients</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">99%</span>
+      <span class="stat-label">Uptime average</span>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="featured">
+    <div class="section-header">
+      <span class="line-num">02</span>
+      <h2>Selected work</h2>
+      <a href="{% url 'projects' %}" class="see-all">See all →</a>
+    </div>
+    <div class="featured-grid">
+      <a href="{% url 'projects' %}" class="feat-card feat-card--large">
+        <div class="feat-img feat-img--1"></div>
+        <div class="feat-body">
+          <span class="feat-tag">SaaS · Full-stack</span>
+          <h3>TaskFlow Dashboard</h3>
+          <p>A real-time project management tool with drag-and-drop interfaces and team collaboration features.</p>
+          <span class="feat-link">View case study →</span>
+        </div>
+      </a>
+      <a href="{% url 'projects' %}" class="feat-card">
+        <div class="feat-img feat-img--2"></div>
+        <div class="feat-body">
+          <span class="feat-tag">E-commerce · React</span>
+          <h3>Lumina Shop</h3>
+          <p>High-converting storefront with 3D product previews and seamless checkout flow.</p>
+          <span class="feat-link">View case study →</span>
+        </div>
+      </a>
+      <a href="{% url 'projects' %}" class="feat-card">
+        <div class="feat-img feat-img--3"></div>
+        <div class="feat-body">
+          <span class="feat-tag">API · Node.js</span>
+          <h3>AuthKit</h3>
+          <p>Open-source authentication SDK with OAuth2, magic links, and MFA built-in.</p>
+          <span class="feat-link">View case study →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer-copy">© 2025 The Ravi</span>
+    <div class="footer-links">
+      <a href="https://github.com\ravikaushal11u" target="_blank">GitHub</a>
+      <a href="https://linkedin.com\in\ravikaushal2005" target="_blank">LinkedIn</a>
+      <a href="https://instagram.com\ravikaushal_000" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+ <script src="{% static 'main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}The ---Ravi{% endblock %}</title>
+
+    <link rel="icon" href="{% static 'assets/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    {% block css %}{% endblock %}
+
+</head>
+
+<body>
+
+
+
+   
+
+
+
+ <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+<footer>
+
+    
+
+</footer>
+
+{% block js %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+
+.login-page {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 40px 20px;
+}
+
+.login-card {
+    width: 400px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.3);
+}
+
+.login-card h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0f172a;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #0f172a;    
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;   /* ← FIX: input border se bahar nahi jayega */
+}
+
+/* ← FIX: button ka koi style nahi tha, isliye plain/broken dikh raha tha */
+button[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: #1d4ed8;
+}
+
+.signup {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.signup a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* ← FIX: error messages ka style bhi add kiya */
+.messages {
+    margin-top: 15px;
+}
+.messages li {
+    list-style: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+    margin-bottom: 6px;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="login-page">
+    <div class="login-card">
+
+        <h1>Login In</h1>
+
+        {% if messages %}   <!-- ← FIX: login page mein messages display nahi the -->
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <button type="submit">Sign In</button>
+
+           
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

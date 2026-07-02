@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+body{
+    background:#0f172a;
+}
+
+.dashboard{
+    width:95%;
+    max-width:1400px;
+    margin:40px auto;
+}
+
+/* ---------- Header ---------- */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.header h1{
+    color:#fff;
+    font-size:38px;
+    font-weight:700;
+}
+
+.header p{
+    color:#94a3b8;
+    margin-top:6px;
+}
+
+.logout-btn{
+    display:inline-block;
+    padding:12px 28px;
+    text-decoration:none;
+    color:#fff;
+    border-radius:10px;
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 8px 25px rgba(239,68,68,.35);
+}
+
+.logout-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(239,68,68,.45);
+}
+
+/* ---------- Cards ---------- */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.card{
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:25px;
+}
+
+.card h3{
+    color:#94a3b8;
+    font-size:15px;
+}
+
+.card span{
+    color:white;
+    font-size:36px;
+    font-weight:bold;
+}
+
+/* ---------- Table ---------- */
+
+.table-box{
+
+    overflow-x:auto;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:16px;
+
+    font-size:15px;
+
+}
+
+td{
+
+    padding:16px;
+
+    color:white;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+tr:hover{
+
+    background:rgba(37,99,235,.08);
+
+}
+
+.message{
+
+    max-width:450px;
+
+    white-space:normal;
+
+    word-break:break-word;
+
+}
+
+.id{
+
+    color:#60a5fa;
+
+    font-weight:bold;
+
+}
+
+.email{
+
+    color:#38bdf8;
+
+}
+
+.empty{
+
+    color:#bbcce4;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+</style>
+
+<div class="dashboard">
+
+<div class="header">
+
+<div>
+
+<h1>📩 Contact Messages</h1>
+
+<p>Messages received from portfolio visitors</p>
+
+</div>
+
+<a href="{% url 'admin_logout' %}" class="logout-btn">
+Logout
+
+</a>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Total Messages</h3>
+
+<span>{{ contacts|length }}</span>
+
+</div>
+
+</div>
+
+<div class="table-box">
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Budget</th>
+    <th>Message</th>
+</tr>
+
+{% for contact in contacts %}
+
+<tr>
+    <td class="id">#{{ contact.id }}</td>
+    <td>{{ contact.name }}</td>
+    <td class="email">{{ contact.email }}</td>
+    <td class="mobile">{{ contact.mobile }}</td>
+    <td>{{ contact.budget }}</td>
+    <td class="message">{{ contact.message }}</td>
+</tr>
+
+{% empty %}
+
+<tr>
+
+<td colspan="5" class="empty">
+
+No Messages Found 🚫
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</div>
+
+{% endblock %}
