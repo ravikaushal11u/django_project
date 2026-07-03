@@ -46,7 +46,7 @@ INSTALLED_APPS = [
      'chat',
      'conversations',
      'accounts',
-     'automation',
+    #  'automation',
 
 ]
 

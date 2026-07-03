@@ -14,7 +14,7 @@ urlpatterns = [
     path('chats/', include('conversations.urls')),
     path('login/', include('accounts.urls')),
     path('api/',include('api.urls')),
-    path('atm/',include('automation.urls')),
+    # path('atm/',include('automation.urls')),
 ]
 
 if settings.DEBUG:

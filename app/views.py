@@ -22,18 +22,12 @@ def projects(request):
 @login_required(login_url='login')
 def contact(request):
     if request.method == "POST":
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        mobile = request.POST.get("mobile")
-        budget = request.POST.get("budget")
-        message = request.POST.get("message")
-
         Contact.objects.create(
-            name=name,
-            email=email,
-            mobile=mobile,
-            budget=budget,
-            message=message
+            name=request.POST.get("name"),
+            email=request.POST.get("email"),
+            mobile=request.POST.get("mobile"),
+            budget=request.POST.get("budget"),
+            message=request.POST.get("message"),
         )
 
         messages.success(request, "Message sent successfully!")
@@ -42,9 +36,7 @@ def contact(request):
     return render(request, "contact.html")
 
 
-@login_required(login_url='admnl')   # Ya hata do agar session check hi use karna hai
 def messages_page(request):
-    # Sirf admin session wale hi dekh sakte hain
     if not request.session.get("admin_login"):
         return redirect("admnl")
 
