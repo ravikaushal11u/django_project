@@ -1,53 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Travel Planner - Project Planning</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef3f8;
+    color:#333;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#0f62fe,#0043ce);
+    color:white;
+    padding:50px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:42px;
+}
+
+header p{
+    margin-top:10px;
+    font-size:18px;
+    opacity:.9;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.section{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.section h2{
+    color:#0f62fe;
+    margin-bottom:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#f8fbff;
+    border-left:5px solid #0f62fe;
+    padding:20px;
+    border-radius:10px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#111;
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+footer{
+    background:#0f62fe;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+</style>
+
 </head>
 <body>
- 
-<h1>   user side </h1>
-    hello i'm ravikaushal i'm a software devloper 
 
-    i build software for travel 
+<header>
 
-    in this application provide 
+<h1>🌍 Smart Travel Planner</h1>
 
-    travel sevices
-    hotels and restrorent
-    street foods 
-    pg and lodges
-    tour guide
-     bikes and cabs for local tavel travel
+<p>One Platform for Complete Travel Planning</p>
 
-     and create and suggest place for travels 
-     
-     user only enter date and location  this app calculate and provide 
-     cheap to according budget price for journey 
+</header>
 
-     if user want  to create plan  without any work only pay money this app create app  books according ot date and loction alls 
-     user filter this,  mean user according to him filer services 
+<div class="container">
 
-     
-<h1>vendor side </h1>
-vendor register  in this his bussiness 
-provide documents for user security 
+<div class="section">
 
-in this two type vendors 
-1 vendor pay charges monthly for this
-2 app to cut commisions for profit  through acustomers
+<h2>📌 Project Overview</h2>
 
-<h1>devlopers /mangers</h1>
-6 mangers / devlopers
+<p>
 
-1 travels all 
-2 hotels and restrorent
-3 pg and hostels 
-4 guide and cabs 
-5 to manange all for bind 
-6 payment 
+Smart Travel Planner is an AI-powered travel booking platform where users can plan an entire trip by simply entering their destination, travel dates, and budget.
 
+The application automatically calculates travel costs, suggests the best itinerary, books hotels, transportation, restaurants, and local activities.
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>👤 User Features</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Trip Planning</h3>
+
+<ul>
+<li>Select destination</li>
+<li>Select travel dates</li>
+<li>Enter total budget</li>
+<li>Choose travel type</li>
+<li>Solo / Family / Couple / Friends</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>AI Travel Planner</h3>
+
+<ul>
+<li>Automatic itinerary generation</li>
+<li>Budget calculation</li>
+<li>Travel suggestions</li>
+<li>Best routes</li>
+<li>Weather information</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Transportation</h3>
+
+<ul>
+<li>Flight Booking</li>
+<li>Train Booking</li>
+<li>Bus Booking</li>
+<li>Bike Rental</li>
+<li>Cab Booking</li>
+<li>Metro Information</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Accommodation</h3>
+
+<ul>
+<li>Hotels</li>
+<li>PG</li>
+<li>Hostels</li>
+<li>Lodges</li>
+<li>Resorts</li>
+<li>Homestays</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Food Services</h3>
+
+<ul>
+<li>Restaurants</li>
+<li>Street Food</li>
+<li>Cafes</li>
+<li>Local Famous Food</li>
+<li>Online Food Delivery</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Local Services</h3>
+
+<ul>
+<li>Tour Guide</li>
+<li>Photographer</li>
+<li>Translator</li>
+<li>Emergency Contact</li>
+<li>Medical Services</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Smart Suggestions</h3>
+
+<ul>
+<li>Nearby Attractions</li>
+<li>Hidden Places</li>
+<li>Weekend Trips</li>
+<li>Adventure Activities</li>
+<li>Shopping Places</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Extra Features</h3>
+
+<ul>
+<li>Digital Tickets</li>
+<li>Travel Checklist</li>
+<li>Expense Tracker</li>
+<li>Offline Maps</li>
+<li>Travel Notifications</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🤖 AI Features</h2>
+
+<ul>
+
+<li>Automatic Trip Planning</li>
+
+<li>Budget Optimization</li>
+
+<li>Cheapest Travel Route</li>
+
+<li>Hotel Recommendation</li>
+
+<li>Restaurant Recommendation</li>
+
+<li>Best Time to Visit</li>
+
+<li>Weather Prediction</li>
+
+<li>Crowd Analysis</li>
+
+<li>Travel Risk Alerts</li>
+
+<li>Nearby Events Recommendation</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>🏪 Vendor Panel</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Vendor Registration</h3>
+
+<ul>
+
+<li>Business Registration</li>
+
+<li>ID Verification</li>
+
+<li>GST Verification</li>
+
+<li>Business Documents</li>
+
+<li>Location Verification</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Vendor Categories</h3>
+
+<ul>
+
+<li>Hotels</li>
+
+<li>Restaurants</li>
+
+<li>PG & Hostels</li>
+
+<li>Bike Rental</li>
+
+<li>Cab Services</li>
+
+<li>Travel Agencies</li>
+
+<li>Tour Guides</li>
+
+<li>Adventure Activities</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Business Model</h3>
+
+<ul>
+
+<li>Monthly Subscription</li>
+
+<li>Commission Based</li>
+
+<li>Featured Listing</li>
+
+<li>Advertisement Plans</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>💰 Revenue Model</h2>
+
+<ul>
+
+<li>Monthly Vendor Subscription</li>
+
+<li>Commission from Every Booking</li>
+
+<li>Featured Vendor Promotion</li>
+
+<li>Premium AI Trip Planner</li>
+
+<li>Travel Insurance Commission</li>
+
+<li>Affiliate Income</li>
+
+<li>Advertisement Revenue</li>
+
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>🛠 Admin & Developer Panel</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Developer 1</h3>
+
+<p>Transportation Module</p>
+
+</div>
+
+<div class="card">
+
+<h3>Developer 2</h3>
+
+<p>Hotels & Restaurants</p>
+
+</div>
+
+<div class="card">
+
+<h3>Developer 3</h3>
+
+<p>PG, Hostels & Homestays</p>
+
+</div>
+
+<div class="card">
+
+<h3>Developer 4</h3>
+
+<p>Guides, Bike & Cab Services</p>
+
+</div>
+
+<div class="card">
+
+<h3>Developer 5</h3>
+
+<p>User Management, AI Planning & Vendor Management</p>
+
+</div>
+
+<div class="card">
+
+<h3>Developer 6</h3>
+
+<p>Payments, Security, Reports & Analytics</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🚀 Future Features</h2>
+
+<ul>
+
+<li>Voice Assistant</li>
+
+<li>AI Chatbot</li>
+
+<li>Travel Community</li>
+
+<li>Group Trip Planning</li>
+
+<li>AR Navigation</li>
+
+<li>Crypto Payments</li>
+
+<li>International Travel</li>
+
+<li>Passport & Visa Assistance</li>
+
+<li>Travel Insurance</li>
+
+<li>Event Ticket Booking</li>
+
+<li>Car Rental</li>
+
+<li>Electric Vehicle Rental</li>
+
+<li>Camping Booking</li>
+
+<li>Drone Photography Booking</li>
+
+<li>Local Shopping Marketplace</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>Smart Travel Planner</h2>
+
+<p>Your Complete AI Travel Companion</p>
+
+</footer>
 
 </body>
 </html>
